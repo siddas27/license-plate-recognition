@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RTO Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    function refreshIt(element) {
+              setTimeout(function() {
+                  element.src = element.src.split('?')[0] + '?' + new Date().getTime();
+                  refreshIt(element);
+              }, 50); // refresh every 50ms
+          }
+    </script>
+  </head>
+  <body>
+      <div class="container">
+        <center>
+          <h1>Beware of violating traffic rules!</h1>
+        </center>
+        <div class="row">
+          <div class="col-md-9">
+            <img src="/static/c5.jpg" alt="" style="height:90%; width:85%" onload = "refreshIt(this)"/>
+          </div>
+          <div class="col-md-3">
+            <form action = "http://localhost:5000/uploader" method = "POST"
+               enctype = "multipart/form-data">
+               <input type = "file" name = "file" />
+               <input type = "submit"/>
+            </form>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
