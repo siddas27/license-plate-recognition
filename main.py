@@ -12,5 +12,6 @@ def upload_file():
       f.save(secure_filename(f.filename))
       return 'file uploaded successfully'
 
+
 if __name__ == '__main__':
    app.run(host = 'localhost', port = 5000)

@@ -235,8 +235,9 @@ def getdata(file):
 		w=w+y
 	h=dfs[dfs['code']==str(w)]
 	#print(h['area'])
+	s='license plate number'+rightplate_string+'State'+g+'Area'+h
 
-	return rightplate_string,g,h
+	return s
 	# In[ ]:
 
 
