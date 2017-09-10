@@ -12,7 +12,7 @@ def getdata(file):
 
 # In[2]:
 
-	car_image = imread(file, as_grey=True)
+	car_image = imread(str(file), as_grey=True)
 	# it should be a 2 dimensional array
 	#print(car_image.shape)
 
