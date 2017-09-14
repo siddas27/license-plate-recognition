@@ -12,7 +12,7 @@ def getdata(file):
 
 # In[2]:
 
-	car_image = imread(str(file), as_grey=True)
+	car_image = imread(file, as_grey=True)
 	# it should be a 2 dimensional array
 	#print(car_image.shape)
 
@@ -235,10 +235,7 @@ def getdata(file):
 		w=w+y
 	h=dfs[dfs['code']==str(w)]
 	#print(h['area'])
-	s='license plate number'+rightplate_string+'State'+g+'Area'+h
-
+	s='license plate number '+rightplate_string #'State'+str(g.value)+'Area'+str(h.value)
 	return s
 	# In[ ]:
-
-
 
