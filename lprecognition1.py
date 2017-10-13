@@ -214,28 +214,21 @@ def getdata(file):
 															#print(rightplate_string)
 
 
-															# In[47]:
 
-															import pandas as pd
-															df=pd.read_csv('sdata.csv')
-															dfs=pd.read_csv('mh.csv')
-
-
-															# In[68]:
-															v=''
-															w=''
-															for x in df['Code']:
-																if plate_string[0:2]==str(x):
-																	v=v+x
-																	g=df[df['Code']==v]
-																	#print(g['State'])
-																	plate_string1=rightplate_string[0:2]+'-'+rightplate_string[2:4]
-																	for y in dfs['code'] :
-																		if plate_string1[0:5]==str(y):
-																			w=w+y
-																			h=dfs[dfs['code']==str(w)]
-																			#print(h['area'])
-																			s='license plate number'+rightplate_string+'State'+g+'Area'+h
-
-																			return s
-																			# In[ ]:
+	# In[68]:
+	v=''
+	w=''
+	for x in df['Code']:
+	    if plate_string[0:2]==str(x):
+		v=v+x
+	g=df[df['Code']==v]
+	#print(g['State'])
+	plate_string1=rightplate_string[0:2]+'-'+rightplate_string[2:4]
+	for y in dfs['code'] :
+	    if plate_string1[0:5]==str(y):
+		w=w+y
+	h=dfs[dfs['code']==str(w)]
+	#print(h['area'])
+	s='license plate number '+rightplate_string #'State'+str(g.value)+'Area'+str(h.value)
+	return s
+	# In[ ]:
