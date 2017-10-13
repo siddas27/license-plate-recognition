@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request
+from lprecognition1 import getdata
 app = Flask(__name__)
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -22,9 +23,14 @@ def upload_file():
        destination = "/".join([target, filename])
        print(destination)
        file.save(destination)
+       #a = getdata(filename)
 
-   return render_template("save.html")
+   return render_template("index.html")
 
+@app.route("/<name>")
+def get(name):
+    d = getdata(name)
+    return render_template("data.html", name = d)
 
 if __name__ == '__main__':
    app.run(host = 'localhost', port = 5000)
